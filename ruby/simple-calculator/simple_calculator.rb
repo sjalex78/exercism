@@ -7,17 +7,13 @@ class SimpleCalculator
   ALLOWED_OPERATIONS = ['+', '/', '*'].freeze
 
   def self.calculate(first_operand, second_operand, operation)
-    if second_operand.to_i.zero? && operation == '/'
-      'Division by zero is not allowed.'
-    elsif if first_operand.class != Integer
-            raise ArgumentError
-          elsif second_operand.class != Integer
-            raise ArgumentError
-          end
-    elsif !ALLOWED_OPERATIONS.include?(operation)
-      raise UnsupportedOperation
-    elsif answer = first_operand.send(operation, second_operand)
-      "#{first_operand} #{operation} #{second_operand} = #{answer}"
-    end
+    raise ArgumentError if first_operand.class != Integer
+    raise ArgumentError if second_operand.class != Integer
+    raise UnsupportedOperation unless ALLOWED_OPERATIONS.include?(operation)
+
+    answer = first_operand.send(operation, second_operand)
+    "#{first_operand} #{operation} #{second_operand} = #{answer}"
+  rescue ZeroDivisionError
+    'Division by zero is not allowed.'
   end
 end
