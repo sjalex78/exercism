@@ -1,5 +1,5 @@
-// @ts-check
 //
+// @ts-check
 // ☝🏽 The line above enables type checking for this file. Various IDEs interpret
 // the @ts-check directive. It will give you helpful autocompletion on the web
 // and supported IDEs when implementing this exercise. You don't need to
@@ -49,7 +49,7 @@ export function frontDoorPassword(word) {
  * @returns {string}
  */
 export function backDoorResponse(line) {
-let lineFix = line.trim();
+  let lineFix = line.trim();
   return lineFix[lineFix.length - 1];
 }
 
