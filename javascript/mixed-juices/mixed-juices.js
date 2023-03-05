@@ -19,11 +19,29 @@ const prepTime = {
   "All or Nothing": 5,
 };
 
+// export function timeToMixJuice(name) {
+//   if (Object.keys(prepTime).includes(name)) {
+//     return prepTime[name];
+//   } else {
+//     return 2.5;
+//   }
+// }
+
+// switch
 export function timeToMixJuice(name) {
-  if (Object.keys(prepTime).includes(name)) {
-    return prepTime[name];
-  } else {
-    return 2.5;
+  switch (name) {
+    case "Pure Strawberry Joy":
+      return 0.5;
+    case "Energizer":
+      return 1.5;
+    case "Green Garden":
+      return 1.5;
+    case "Tropical Island":
+      return 3;
+    case "All or Nothing":
+      return 5;
+    default:
+      return 2.5;
   }
 }
 
@@ -39,27 +57,23 @@ export function timeToMixJuice(name) {
 // 6 wedges from a `'small'` lime, 8 wedges from a `'medium'` lime and 10 from a `'large'` lime.
 export function limesToCut(wedgesNeeded, limes) {
   const limeRates = {
-    'small': 6,
-    'medium': 8,
-    'large': 10
+    small: 6,
+    medium: 8,
+    large: 10,
   };
 
   let wedgesCut = 0;
-  let i = 0;
+  let count = 0;
 
   while (wedgesCut < wedgesNeeded) {
-    if (limes[i]) {
-    wedgesCut += limeRates[limes[i]];
-      i++;
-  } else {
-    return i;
+    if (!limes[count]) {
+      break;
+    }
+    wedgesCut += limeRates[limes[count]];
+    count++;
   }
+  return count;
 }
-}
-//limes is an [],
-//we will iterate through each entity in an array with forEach.
-//we will take lime rates value from each lime and  subtract it with total wedges needed
-//when the total wedges needed is 0, then we will have our total lime
 
 /**
  * Determines which juices still need to be prepared after the end of the shift.
@@ -69,5 +83,9 @@ export function limesToCut(wedgesNeeded, limes) {
  * @returns {string[]} remaining orders after the time is up
  */
 export function remainingOrders(timeLeft, orders) {
-  throw new Error("Please implement the remainingOrders function");
+  while (timeLeft > 0) {
+    timeLeft -= timeToMixJuice(orders[0]);
+    orders.shift();
+  }
+  return orders;
 }
