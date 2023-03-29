@@ -5,6 +5,7 @@
 - [Variables and Constants](#id-section1)
 - [Function Declarations](#id-section2)
 - [Exposing to Other Files](#id-section3)
+- [Numbers](#id-section4)
 
 ## Variables and Constants
 
@@ -62,4 +63,60 @@ import { MY_VALUE, add } from './file';
 
 add(MY_VALUE, 5);
 // => 15
+```
+
+## Numbers
+  <div id='id-section4'/>
+
+- JavaScript only has two types of number:
+  - number: a numeric data type in the double-precision 64-bit floating-point format (IEEE 754).
+  `Eg. -6, -2.4, 0, 0.1, 1, 3.14, 16.984025, 25, 976, 1024.0 and 500000`
+  - bigint: a numeric data type that can represent integers in the arbitrary precision format.
+  `Eg. -12n, 0n, 4n, and 9007199254740991n`
+
+- Rounding
+  - round down (floor)
+  - round up (ceil) decimal numbers to nearest whole numbers.
+
+```js
+Math.floor(234.34); // => 234
+Math.ceil(234.34); // => 235
+```
+JavaScript provides 6 different operators to perform basic arithmetic operations on numbers.
+
+- `+`: The **addition** operator is used to find the sum of numbers.
+- `-`: The **subtraction** operator is used to find the difference between two numbers
+- `*`: The **multiplication** operator is used to find the product of two numbers.
+- `/`: The **division** operator is used to divide two numbers.
+
+```javascript
+2 - 1.5; //=> 0.5
+19 / 2; //=> 9.5
+```
+
+- `%`: The **remainder** operator is used to find the remainder of a division performed.
+
+  ```javascript
+  40 % 4; // => 0
+  -11 % 4; // => -3
+  ```
+
+- `**`: The **exponentiation** operator is used to raise a number to a power.
+
+  ```javascript
+  4 ** 3; // => 64
+  4 ** 1 / 2; // => 2
+  ```
+- JavaScript uses the PEDMAS (Parentheses, Exponents, Division/Multiplication, Addition/Subtraction)
+
+- `x += y` is same as `x = x + y`.
+Often, this is used with a number instead of a variable `y`.
+The 5 other operations can also be conducted in a similar style.
+
+```javascript
+let x = 5;
+x += 25; // x is now 30
+
+let y = 31;
+y %= 3; // y is now 1
 ```
