@@ -209,6 +209,7 @@ The splice() method changes the contents of an array by removing or replacing ex
 ## Conditionals
 
 <div id='id-section8'/>
+
 - A common way to conditionally execute logic in JavaScript is the if-statement
 - It consists of the if keyword, a condition wrapped in round brackets and a code block wrapped in curly brackets.
 - The code block will only be executed if the condition evaluates to true.
@@ -233,4 +234,55 @@ if (condition1) {
 } else {
   // code that is executed otherwise
 }
+```
+
+## Increment/Decrement
+
+<div id='id-section9'/>
+
+- JavaScript has an increment and a decrement operator.
+- They modify a variable in place
+- ++ adds one to a number
+- -- subtracts one from a number.
+
+```js
+let i = 3;
+i++;
+// i is now 4
+
+let j = 0;
+j--;
+// j is now -1
+```
+
+- **for loop** is one of the most commonly used statements to repeatedly execute some logic.
+
+```js
+for (initialization; condition; step) {
+  // code that is executed repeatedly as long as the condition is true
+}
+```
+
+- counter variable, the condition checks whether the loop should be continued or stopped and the step increments the counter at the end of each repetition.
+The individual parts of the header are separated by semicolons.
+
+```javascript
+const list = ['a', 'b', 'c'];
+for (let i = 0; i < list.length; i++) {
+  // code that should be executed for each item list[i]
+}
+```
+
+Defining the step is often done using JavaScript's increment or decrement operator as shown in the example above.
+These operators modify a variable in place.
+`++` adds one to a number, `--` subtracts one from a number.
+
+```javascript
+let i = 3;
+i++;
+// i is now 4
+
+let j = 0;
+j--;
+// j is now -1
 ```
