@@ -9,6 +9,7 @@
 - [Arrays](#id-section5)
 - [Strings](#id-section6)
 - [Boolean](#id-section7)
+- [Conditionals](#id-section8)
 
 ## Variables and Constants
 
@@ -203,3 +204,33 @@ The splice() method changes the contents of an array by removing or replacing ex
 
 - A boolean represents one of two values: true or false.
 - Logical operators (!, &&, ||) are typically used with boolean values and they return a boolean value.
+
+
+## Conditionals
+
+<div id='id-section8'/>
+- A common way to conditionally execute logic in JavaScript is the if-statement
+- It consists of the if keyword, a condition wrapped in round brackets and a code block wrapped in curly brackets.
+- The code block will only be executed if the condition evaluates to true.
+
+```js
+if (condition) {
+  // code that is executed if "condition" is true
+}
+
+
+if (condition) {
+  // code that is executed if "condition" is true
+} else {
+  // code that is executed otherwise
+}
+
+if (condition1) {
+  // code that is executed if "condition1" is true
+} else if (condition2) {
+  // code that is executed if "condition2" is true
+  // but "condition1" was false
+} else {
+  // code that is executed otherwise
+}
+```
