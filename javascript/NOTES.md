@@ -6,6 +6,7 @@
 - [Function Declarations](#id-section2)
 - [Exposing to Other Files](#id-section3)
 - [Numbers](#id-section4)
+- [Arrays](#id-section5)
 
 ## Variables and Constants
 
@@ -120,3 +121,44 @@ x += 25; // x is now 30
 let y = 31;
 y %= 3; // y is now 1
 ```
+
+## Arrays
+
+  <div id='id-section5'/>
+
+- can hold any type of primitives or objects, even mixed types.
+- add elements between square brackets [].
+- To read from the array, put the index in square brackets [] after the identifier.
+- The indices of an array start at zero.
+
+`Eg
+
+const numbers = [1, 'two', 3, 'four'];
+numbers[2];
+// => 3`
+
+To retrieve the number of elements that are in an array:
+`numbers.length;`
+
+To change an element in the array, you assign a value at the index:
+`numbers[0] = 'one'`
+
+- **push**
+The push() method adds one or more elements to the end of an array and returns the new length of the array.1
+`numbers.push(5); // => 5`
+
+- **pop**
+The pop() method removes the last element from an array and returns that element.
+`numbers.pop()'
+
+- **shift**
+The shift() method removes the first element from an array and returns that removed element.
+`numbers.shift()`
+
+- **unshift**
+The unshift() method adds one or more elements to the beginning of an array.
+`numbers.unshift('one')`
+
+- **splice**
+The splice() method changes the contents of an array by removing or replacing existing elements and/or adding new elements in place.
+`numbers.splice(2, 1, 'one')`
