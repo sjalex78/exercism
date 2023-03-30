@@ -8,6 +8,7 @@
 - [Numbers](#id-section4)
 - [Arrays](#id-section5)
 - [Strings](#id-section6)
+- [Boolean](#id-section7)
 
 ## Variables and Constants
 
@@ -194,3 +195,11 @@ The splice() method changes the contents of an array by removing or replacing ex
 - trim - remove whitespace at the beginning and end
 - includes, startsWith and endsWith - determine whether another string is part of the given string
 - slice - extract a section of the string
+
+
+## Booleans
+
+  <div id='id-section7'/>
+
+- A boolean represents one of two values: true or false.
+- Logical operators (!, &&, ||) are typically used with boolean values and they return a boolean value.
