@@ -7,6 +7,7 @@
 - [Exposing to Other Files](#id-section3)
 - [Numbers](#id-section4)
 - [Arrays](#id-section5)
+- [Strings](#id-section6)
 
 ## Variables and Constants
 
@@ -162,3 +163,34 @@ The unshift() method adds one or more elements to the beginning of an array.
 - **splice**
 The splice() method changes the contents of an array by removing or replacing existing elements and/or adding new elements in place.
 `numbers.splice(2, 1, 'one')`
+
+
+## Strings
+
+  <div id='id-section6'/>
+
+- stores text data.
+- text in single quotes or double quotes.
+` eg "Hello, World!" `
+- a list of characters where the first character has index 0. You can access an individual character of the string using square brackets and the index of the letter you want to retrieve.
+
+```js
+'cat'[1];
+// => 'a'
+'cat'.length;
+// => 3
+```
+
+### Concatenation and Methods
+
+- concatenate strings is to use the addition operator +.
+
+``` js
+'I like' + ' ' + 'cats.';
+// => "I like cats."
+```
+
+- toUpperCase and toLowerCase - change the case of all characters
+- trim - remove whitespace at the beginning and end
+- includes, startsWith and endsWith - determine whether another string is part of the given string
+- slice - extract a section of the string
