@@ -3,7 +3,7 @@
 # My Table of content
 
 - [Variables and Constants](#id-section1)
-- [Function Declarations](#id-section2)
+- [Functions](#id-section2)
 - [Exposing to Other Files](#id-section3)
 - [Numbers](#id-section4)
 - [Arrays](#id-section5)
@@ -13,7 +13,7 @@
 - [Increment/Decrement](#id-section9)
 - [While Loops](#id-section10)
 - [Objects](#id-section11)
-- [Null](#id-section12)
+- [Null Undefined](#id-section12)
 
 ## Variables and Constants
 
@@ -35,9 +35,11 @@ myFirstVariable = new SomeComplexClass();
 
 - In contrast to `let` and `var`, variables that are defined with `const` can only be assigned once.
 
-## Function Declarations
+## Functions
 
 <div id='id-section2'/>
+
+### Declarations
 
 In JavaScript, units of functionality are encapsulated in _functions_,
 
@@ -345,7 +347,7 @@ let newArrayName = array.map(function(element) {
 - The values inside one object can have different types.
 - They can be primitive types like numbers but also arrays, other objects or even functions.
 
-## Creating an Object
+### Creating an Object
 
 You create an object using curly brackets.
 You can also directly include some entries.
@@ -386,7 +388,7 @@ const obj = {
 };
 ```
 
-## Retrieving a Value
+### Retrieving a Value
 
 There are two ways to retrieve the value for a given key, dot notation and bracket notation.
 
@@ -414,7 +416,7 @@ It only works if the key follows the identifier naming rules.
   console.log("entries",Object.entries(visitor)) // entries [['key1', 'value'] ['key 2', 'value2']]
 ```
 
-## Adding or Changing a Value
+### Adding or Changing a Value
 
 You can add or change a value using the assignment operator `=`.
 Again, there are dot and bracket notations available.
@@ -432,7 +434,7 @@ const key = 'new key 3';
 obj[key] = 'new value 3';
 ```
 
-## Deleting an Entry
+### Deleting an Entry
 
 You can delete a key-value pair from an object using the `delete` keyword.
 
@@ -446,7 +448,7 @@ delete obj.key1;
 delete obj['key2'];
 ```
 
-## Checking Whether a Key Exists
+### Checking Whether a Key Exists
 
 You can check whether a certain key exists in an object with the `hasOwnProperty` method.
 
@@ -460,7 +462,7 @@ obj.hasOwnProperty('age');
 // => false
 ```
 
-## Looping Through an Object
+### Looping Through an Object
 
 There is a special `for...in` loop to iterate over all keys of an object.
 
@@ -483,10 +485,12 @@ Also, be aware that `for...in` includes [inherited keys][concept-inheritance] in
 [concept-inheritance]: /tracks/javascript/concepts/inheritance
 
 
-## Null
+## Null Undefined
 
 <div id='id-section12'/>
 
+- null means an empty value and is also a primitive type in JavaScript. The variable which has been assigned as null contains no value.
+- Undefined, on the other hand, means the variable has been declared, but its value has not been assigned.
 - value null is used as an intentional "empty value" for variables of any type.
 
 ```js
@@ -583,4 +587,41 @@ amount = amount ?? 1;
 amount = 0;
 amount = amount ?? 1;
 // => 0
+```
+
+## Closures
+
+<div id='id-section13'/>
+
+- allows variables from an outer lexical scope to be used inside of a nested block of code. JavaScript supports closures transparently, and they are often used without knowing what they are.
+
+```js
+// Top-level declarations are global-scope
+const dozen = 12;
+
+{
+  // Braces create a new block-scope
+  // Referencing the outer variable is a closure.
+  const twoDozen = dozen * 2;
+}
+
+// Functions create a new function-scope and block-scope.
+// Referencing the outer variable here is a closure.
+function nDozen(n) {
+  return dozen * n;
+}
+```
+
+Closures to save state and pass along values
+Using a mutable variable declaration (like let or var) allows for state to be preserved:
+
+```js
+let counter = 0;
+
+// This function closure increments the counter's state in the outer lexical context.
+// This way the counter can be shared between many calling contexts.
+export function increment() {
+  counter += 1;
+  return counter;
+}
 ```
