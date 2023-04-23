@@ -14,6 +14,8 @@
 - [While Loops](#id-section10)
 - [Objects](#id-section11)
 - [Null Undefined](#id-section12)
+- [Closures](#id-section13)
+- [Type Conversions](#id-section14)
 
 ## Variables and Constants
 
@@ -625,3 +627,33 @@ export function increment() {
   return counter;
 }
 ```
+
+# Type Conversion
+
+<div id='id-section14'/>
+
+JavaScript does not have a construct to cast into a (different) type like many other languages but some built-in helpers can be used instead.
+Most notably, `Boolean`, `Number` and `String` can be used as functions to convert a value to the respective type.
+
+### Converting to a Boolean (Truthy/Falsy Values)
+
+With `Boolean(value)` you can convert any value to a boolean.
+There is a fixed set of values, so called _falsy_ values, that convert to `false`.
+Most importantly, `false`, `0`, empty string, `null`, `undefined` and `NaN` are falsy.
+
+For all other values, `Boolean` returns `true`.
+These values are called _truthy_.
+
+### Converting to a Number
+
+`Number(value)` can be used to convert a value to a number.
+Whitespaces at the beginning and the end of a string are ignored and an empty string is converted to `0`.
+If you try to convert a non-primitive value or a string that does not represent a number, the result is `NaN`
+
+### Converting to a String
+
+With `String(value)` you can convert a value to a string.
+
+For arrays, the `String` function will apply the string conversion for each element and join the results with a comma.
+You can also apply the `join` method yourself, e.g. to customize the separator.
+Note that in these cases `null` and `undefined` will be converted to an empty string.
